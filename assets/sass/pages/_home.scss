@@ -1,8 +1,5 @@
 .slogan_section {
-  height: 912px;
-  background-image: url(https://video.wixstatic.com/video/11062b_9de2dbff3dda403b944bb98c41cb5764/1080p/mp4/file.mp4);
-  background-attachment: fixed;
-  background-size: cover;
+  height: 110vh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -10,8 +7,8 @@
   video{
     position: fixed;
     z-index: -1;
-    // top: 0;
-    // left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 1150px;
     object-fit: cover;
@@ -19,10 +16,12 @@
   p,h3{
     text-align: center;
   }
+  .slogan_section__text{
+    margin-top: 165px;
+  }
   p{
     line-height: 1.4em;
     font-size: 17px;
-    margin-top: 165px;
   }
   h3{
     font-size: 110px;
@@ -37,22 +36,31 @@
     color: white;
     transition: background-color 0.3s ease;
     &:hover{
-        background-color: #45a049;
+        background-color: white;
+        color: black;
     }
   }
 }
 
 .intro_section{
     display: flex;
+
     height: 725px;
+    .intro_section__text_div__headers{
+      display: flex;
+      justify-content: end;
+      padding-right: 20px;
+    }
     .intro_section__text_div{
+      display: flex;
+      flex-direction: column;
         padding: 100px 0;
         background-color: white;
         height: 100%;
         width: 50%;
-        *{
-            margin-left: 230px;
-            margin-bottom: 53px;
+        .container{
+          // margin-left: 40%;
+          width: 80%;
         }
         h4{
             font-size: 42px;
@@ -61,7 +69,6 @@
             letter-spacing: 0.1em;
         }
         .intro_section__text_div__content{
-            width: 370px;
             display: flex;
             flex-direction: column;
             gap: 40px;
@@ -74,13 +81,93 @@
         button{
             min-width: 160px;
             height: 40px;
-            border: none;
+            border: 1px solid black;
             background-color: black;
             color: white;
+            &:hover{
+              background-color: white;
+              color: black;
+            }
+        }
+        .consultation_btn{
+          border: 1px solid black;
+          background-color: white;
+            color: black;
+            margin-left: 10px;
+            &:hover{
+              background-color: black;
+              color: white;
+            }
+        }
+        .btn_div{
+          display: flex;
+          margin-left: 0;
         }
     }
     .intro_section__img_div{
         width: 50%;
         height: 100%;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
     }
+}
+@media screen and (max-width: 950px) {
+  .container{
+    width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 768px){
+    
+  .intro_section{
+    flex-direction: column;
+    align-items: center;
+    .intro_section__text_div{
+      width: 100%;
+      align-items: baseline;
+      p{
+        line-height: 1rem;
+        font-size: 15px;
+        margin: 0;
+        width: 100%;
+        word-break: break-all;
+    white-space: normal;
+    }
+      *{
+        margin-left: 0;
+      }
+    }
+    .intro_section__img_div{
+        width: 100%;
+        // margin-top: 50px;
+    }
+  }
+  .slogan_section{
+    h3{
+      font-size: 50px;
+    }
+  }
+
+}
+
+@media screen and (max-width: 560px){
+  .intro_section__text_div__headers{
+    justify-content: center !important;
+  }
+  .container{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .btn_div{
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .consultation_btn{
+    margin-left: 0 !important;
+  }
 }

@@ -1,65 +1,162 @@
-.nav_large{
+.nav_large {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0 80px;
+  min-height: 100px;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  background-color: white;
+  .last_child_li {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
-    padding: 0 80px;
-    min-height: 100px;
-    align-items: center;
-    position: fixed;
-    z-index: 2;
-    left: 0;
-    top: 0;
-    background-color: white;
-    .nav_left{
-        display: flex;
-        flex-direction: column;
-        place-items: center;
-        gap: 10px;
-        .name{
-            font-size: 17px;
-            font-weight: bold;
-            margin: 20px 0;
-            letter-spacing: 0.1em;
-        }
-        .job{
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            letter-spacing: 0.15em;
-        }
-    }
-    ul{
-        display: flex;
-        gap: 20px;
-        padding-bottom: 20px;
-        a{
-            font-size: 15px;
-        }
-    }
+
     a{
-        color: black;
+        color: rgba(49,127,129,1);
+    }
+    *{
+        margin-left: 10px;
+    }
+  }
+  .nav_left {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    .name {
+      font-size: 17px;
+      font-weight: bold;
+      margin: 20px 0;
+      letter-spacing: 0.1em;
+    }
+    .job {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      letter-spacing: 0.15em;
+    }
+    
+  }
+  ul {
+    display: flex;
+    gap: 20px;
+    a {
+      font-size: 15px;
+    }
+  }
+  a {
+    color: black;
+  }
+}
+.nav_small {
+    overflow: hidden;
+  display: none;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  min-height: 100px;
+  align-items: center;
+  position: fixed;
+  z-index: 5;
+  background-color: white;
+  .nav_left {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 10px;
+  }
+  .ul_div {
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    height: 100vh;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    z-index: 4;
+    transition: left 500ms;
+    // transition: opacity 300ms;
+    .close {
+      height: 50px;
+      width: 50px;
+      font-size: 20px;
+      background-color: transparent;
+      border: none;
+      position: absolute;
+      top:30px;
+      right: 20px;
+    }
+    .log_in {
+        display: flex;
+        align-self: center;
+        justify-content: space-between;
+        background-color: transparent;
+        border: none;
+      height: 50px;
+      width: 70px;
+      color: rgba(49,127,129,1);
+      svg{
+        color: rgba(49,127,129,1);
+        margin-right: 10px;
+      }
+    }
+
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    padding-bottom: 20px;
+    li {
+        height: 49px;
+      width: 70%;
+      a {
+        font-size: 17px;
+      }
+      text-align: center;
+      border-bottom: 1px solid gray;
+    }
+  }
+  .toggle_menu_btn {
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+  }
+  .name {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 20px 0;
+    letter-spacing: 0.1em;
+  }
+  .job {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: 0.15em;
+  }
+  a {
+    color: black;
+  }
+}
+
+@media screen and (max-width: 960px) {
+    .nav_large{
+        padding: 0 20px;
     }
 }
-.nav_small{
+@media screen and (max-width: 768px) {
+  .nav_large {
     display: none;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 80px;
-    min-height: 100px;
-    align-items: center;
-    .nav_left{
-        display: flex;
-        flex-direction: column;
-        place-items: center;
-        gap: 10px;
-    }
-    ul{
-        display: flex;
-        gap: 20px;
-        padding-bottom: 20px;
-    }
-    .toggle_menu_btn{
-        padding: 10px;
-        border-radius: 4px 0;
-    }
+  }
+  .nav_small {
+    display: flex;
+  }
 }

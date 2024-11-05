@@ -5,7 +5,8 @@
 }
 
 img, video {
-  max-width: 100%;
+  width: 100%;
+  max-height: 100%;
 }
 
 ul,
@@ -34,11 +35,19 @@ body {
   top: 0;
   background-color: white;
 }
+.nav_large .last_child_li {
+  display: flex;
+}
+.nav_large .last_child_li a {
+  color: rgb(49, 127, 129);
+}
+.nav_large .last_child_li * {
+  margin-left: 10px;
+}
 .nav_large .nav_left {
   display: flex;
   flex-direction: column;
   place-items: center;
-  gap: 10px;
 }
 .nav_large .nav_left .name {
   font-size: 17px;
@@ -55,7 +64,6 @@ body {
 .nav_large ul {
   display: flex;
   gap: 20px;
-  padding-bottom: 20px;
 }
 .nav_large ul a {
   font-size: 15px;
@@ -65,12 +73,16 @@ body {
 }
 
 .nav_small {
+  overflow: hidden;
   display: none;
   justify-content: space-between;
   width: 100%;
-  padding: 0 80px;
+  padding: 0 20px;
   min-height: 100px;
   align-items: center;
+  position: fixed;
+  z-index: 5;
+  background-color: white;
 }
 .nav_small .nav_left {
   display: flex;
@@ -78,21 +90,103 @@ body {
   place-items: center;
   gap: 10px;
 }
+.nav_small .ul_div {
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  height: 100vh;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  z-index: 4;
+  transition: left 500ms;
+}
+.nav_small .ul_div .close {
+  height: 50px;
+  width: 50px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+}
+.nav_small .ul_div .log_in {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  background-color: transparent;
+  border: none;
+  height: 50px;
+  width: 70px;
+  color: rgb(49, 127, 129);
+}
+.nav_small .ul_div .log_in svg {
+  color: rgb(49, 127, 129);
+  margin-right: 10px;
+}
 .nav_small ul {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   gap: 20px;
   padding-bottom: 20px;
 }
+.nav_small ul li {
+  height: 49px;
+  width: 70%;
+  text-align: center;
+  border-bottom: 1px solid gray;
+}
+.nav_small ul li a {
+  font-size: 17px;
+}
 .nav_small .toggle_menu_btn {
+  font-size: 20px;
   padding: 10px;
-  border-radius: 4px 0;
+  border: none;
+  background-color: transparent;
+}
+.nav_small .name {
+  font-size: 17px;
+  font-weight: bold;
+  margin: 20px 0;
+  letter-spacing: 0.1em;
+}
+.nav_small .job {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  letter-spacing: 0.15em;
+}
+.nav_small a {
+  color: black;
+}
+
+@media screen and (max-width: 960px) {
+  .nav_large {
+    padding: 0 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav_large {
+    display: none;
+  }
+  .nav_small {
+    display: flex;
+  }
+}
+footer {
+  background-color: rgb(87, 187, 191);
 }
 
 .slogan_section {
-  height: 912px;
-  background-image: url(https://video.wixstatic.com/video/11062b_9de2dbff3dda403b944bb98c41cb5764/1080p/mp4/file.mp4);
-  background-attachment: fixed;
-  background-size: cover;
+  height: 110vh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -101,6 +195,8 @@ body {
 .slogan_section video {
   position: fixed;
   z-index: -1;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 1150px;
   object-fit: cover;
@@ -108,10 +204,12 @@ body {
 .slogan_section p, .slogan_section h3 {
   text-align: center;
 }
+.slogan_section .slogan_section__text {
+  margin-top: 165px;
+}
 .slogan_section p {
   line-height: 1.4em;
   font-size: 17px;
-  margin-top: 165px;
 }
 .slogan_section h3 {
   font-size: 110px;
@@ -126,22 +224,29 @@ body {
   transition: background-color 0.3s ease;
 }
 .slogan_section .slogan_section__button:hover {
-  background-color: #45a049;
+  background-color: white;
+  color: black;
 }
 
 .intro_section {
   display: flex;
   height: 725px;
 }
+.intro_section .intro_section__text_div__headers {
+  display: flex;
+  justify-content: end;
+  padding-right: 20px;
+}
 .intro_section .intro_section__text_div {
+  display: flex;
+  flex-direction: column;
   padding: 100px 0;
   background-color: white;
   height: 100%;
   width: 50%;
 }
-.intro_section .intro_section__text_div * {
-  margin-left: 230px;
-  margin-bottom: 53px;
+.intro_section .intro_section__text_div .container {
+  width: 80%;
 }
 .intro_section .intro_section__text_div h4 {
   font-size: 42px;
@@ -150,7 +255,6 @@ body {
   letter-spacing: 0.1em;
 }
 .intro_section .intro_section__text_div .intro_section__text_div__content {
-  width: 370px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -163,11 +267,84 @@ body {
 .intro_section .intro_section__text_div button {
   min-width: 160px;
   height: 40px;
-  border: none;
+  border: 1px solid black;
   background-color: black;
   color: white;
+}
+.intro_section .intro_section__text_div button:hover {
+  background-color: white;
+  color: black;
+}
+.intro_section .intro_section__text_div .consultation_btn {
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  margin-left: 10px;
+}
+.intro_section .intro_section__text_div .consultation_btn:hover {
+  background-color: black;
+  color: white;
+}
+.intro_section .intro_section__text_div .btn_div {
+  display: flex;
+  margin-left: 0;
 }
 .intro_section .intro_section__img_div {
   width: 50%;
   height: 100%;
+}
+.intro_section .intro_section__img_div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 950px) {
+  .container {
+    width: 90% !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .intro_section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .intro_section .intro_section__text_div {
+    width: 100%;
+    align-items: baseline;
+  }
+  .intro_section .intro_section__text_div p {
+    line-height: 1rem;
+    font-size: 15px;
+    margin: 0;
+    width: 100%;
+    word-break: break-all;
+    white-space: normal;
+  }
+  .intro_section .intro_section__text_div * {
+    margin-left: 0;
+  }
+  .intro_section .intro_section__img_div {
+    width: 100%;
+  }
+  .slogan_section h3 {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .intro_section__text_div__headers {
+    justify-content: center !important;
+  }
+  .container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .btn_div {
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .consultation_btn {
+    margin-left: 0 !important;
+  }
 }/*# sourceMappingURL=main.css.map */
